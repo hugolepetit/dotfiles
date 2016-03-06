@@ -45,6 +45,10 @@ nnoremap ` '
 " Left insert mode
 inoremap jj <ESC>
 
+" Switch ; and :
+nnoremap ; :
+nnoremap : ;
+
 "" fold
 set foldmethod=indent   "fold based on indent
 set foldnestmax=3       "deepest fold is 3 levels

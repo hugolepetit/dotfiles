@@ -1,6 +1,6 @@
 [user]
-	name = Loïc Delmaire
-	email = loic.delmaire@gmail.com
+  name = Hugo Lepetit
+  email = giglemad@gmail.com
 [push]
   default = upstream
 [color]
@@ -25,18 +25,11 @@
   rebase = true
 [diff]
   algorithm = patience
+	tool = vimdiff
 [core]
-	excludesfile = /Users/skelz0r/.gitignore_global
   autocrlf = input
   editor = vim
-  whitespace = -trailing-space,-indent-with-non-tab,-tab-in-indent
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path =
-[mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
 [github]
-	user = skelz0r
-[ghi]
-	token = !security find-internet-password -a skelz0r -s github.com -l 'ghi token' -w
+	user = giglemad
+[merge]
+	tool = vimdiff
