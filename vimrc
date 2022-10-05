@@ -203,3 +203,5 @@ nnoremap <Leader>c :tabclose<cr>
 " Emmet
 let g:user_emmet_leader_key='<C-y>'
 let g:user_emmet_install_global = 1
+
+set novisualbell

@@ -54,10 +54,6 @@ setopt CORRECT
 # Enable extended globbing
 setopt EXTENDED_GLOB
 
-# rvm
-[[ -s "/usr/local/rvm/scripts/rvm" ]] && source "/usr/local/rvm/scripts/rvm"
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-
 # prompt
 export RPS1='$(git_prompt_info)$(rvm_prompt_info)'
 
@@ -85,5 +81,3 @@ export PATH="$HOME/bin:$HOME/.bin:./bin:$PATH"
 if [ -e "$HOME/.zshrc.local" ]; then
   source "$HOME/.zshrc.local"
 fi
-
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
