@@ -6,6 +6,11 @@ git_prompt_info() {
   fi
 }
 
+ruby_version_info() {
+  ver=$(ruby -v | sed 's/p.*//' | sed 's/ruby //')
+  echo "[%{$fg_bold[red]%}${ver}%{$reset_color%}]"
+}
+
 # makes color constants available
 autoload -U colors
 colors
@@ -55,7 +60,7 @@ setopt CORRECT
 setopt EXTENDED_GLOB
 
 # prompt
-export RPS1='$(git_prompt_info)$(rvm_prompt_info)'
+export RPS1='$(git_prompt_info)$(ruby_version_info)'
 
 # for root
 # use http://www.nparikh.org/unix/prompt.php#zsh for moar config
@@ -81,3 +86,6 @@ export PATH="$HOME/bin:$HOME/.bin:./bin:$PATH"
 if [ -e "$HOME/.zshrc.local" ]; then
   source "$HOME/.zshrc.local"
 fi
+
+# Stop brew from breaking everything
+export HOMEBREW_NO_AUTO_UPDATE=1

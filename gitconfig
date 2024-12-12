@@ -1,6 +1,6 @@
 [user]
-  name = Hugo Lepetit
-  email = giglemad@gmail.com
+	name = Hugo Lepetit
+	email = 2211142+hugolepetit@users.noreply.github.com
 [push]
   default = upstream
 [color]
@@ -15,14 +15,18 @@
   ci = commit -v
   fix = commit --amend --no-edit
   co = checkout
+  cpk = cherry-pick
   pr = !hub pull-request -b develop
   lg = log --pretty=format:'%C(bold)–%Creset %C(red bold)%h%d%Creset | %C(green)%an%Creset | %C(magenta)%cr%Creset | %C(cyan)%s%Creset'
   lgr = log --pretty=format:'%s'
   lgp = log -p
   lgn = log --name-only
   cancel = reset "HEAD^"
+  rst = restore --staged
 [pull]
   rebase = true
+[push]
+  autoSetupRemote = true
 [diff]
   algorithm = patience
 	tool = vimdiff
@@ -31,12 +35,14 @@
   editor = vim
 	excludesfile = /Users/nautos/.gitignore_global
 [github]
-	user = giglemad
+	user = hugolepetit
 [merge]
 	tool = vimdiff
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+	path =
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
+[url "ssh://git@github.com/"]
+  insteadOf = https://github.com/

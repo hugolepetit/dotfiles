@@ -29,3 +29,10 @@ alias SHAME="ack -i '((TODO|FIXME|XXX) ){3}'"
 
 # git
 alias gdiff="git difftool -y -x 'colordiff -y -W $COLUMNS'"
+
+# getaround
+alias rubo="bundle exec pronto run -c origin/main"
+alias replica="DOTENVS=prod-replica rails c"
+
+# less
+alias agl="ag --pager='less -R'"

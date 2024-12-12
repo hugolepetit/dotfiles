@@ -66,6 +66,7 @@ nnoremap <silent> + :exe "resize " . (winheight(0) * 3/2)<CR>
 
 " Open new split and focus on it
 nnoremap <leader>w <C-w>v<C-w>l
+nnoremap <leader>s <C-w>s<C-w>j
 
 " Reselect paste line
 nnoremap <leader>v V`]
@@ -142,10 +143,6 @@ nnoremap <leader>a :Ack
 " configure syntastic syntax checking to check on open as well as save
 let g:syntastic_check_on_open=1
 
-" Cucumber navigation commands
-autocmd User Rails Rnavcommand step features/step_definitions -glob=**/* -suffix=_steps.rb
-autocmd User Rails Rnavcommand config config -glob=**/* -suffix=.rb -default=routes
-
 " vim-rspec
 let g:rspec_command = "Dispatch bundle exec ./bin/rspec {spec}"
 let g:rspec_runner = "os_x_iterm"
@@ -205,3 +202,12 @@ let g:user_emmet_leader_key='<C-y>'
 let g:user_emmet_install_global = 1
 
 set novisualbell
+
+"Fix typescript fails with regexp engine
+"https://stackoverflow.com/questions/69145357/vim-almost-hangs-with-100-line-typescript-file
+" failed attempt : autocmd BufNewFile,BufRead *.tsx set regexpengine=2
+set regexpengine=2
+
+let g:yaml_revealer_separator = '.'
+nnoremap <Leader>y :call SearchYamlKey()<CR>
+
